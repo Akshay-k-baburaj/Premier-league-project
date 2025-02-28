@@ -9,6 +9,8 @@ target/
 *.war
 *.log
 
+/ss
+
 # Environment variables
 .env
 .env.local

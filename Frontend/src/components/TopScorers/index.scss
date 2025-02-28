@@ -1,0 +1,147 @@
+.scorers-page {
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ade8f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  .scorers-card {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    
+    &:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+  
+  .scorers-header {
+    background: linear-gradient(to right, #0077b6, #00b4d8) !important;
+    border-radius: 12px 12px 0 0;
+    padding: 1.5rem !important;
+    
+    h3 {
+      color: white !important;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  
+  .scorers-content {
+    padding: 1.5rem !important;
+  }
+  
+  .scorers-table-container {
+    overflow-x: auto;
+  }
+  
+  .scorers-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: 1rem;
+      text-align: center;
+      color: #1a202c;
+      font-weight: 500;
+      
+      &.player-header, &.team-header {
+        text-align: left;
+      }
+    }
+    
+    th {
+      background-color: #f8f9fa;
+      font-weight: 700;
+      color: #1a202c;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    
+    .scorer-row {
+      border-bottom: 1px solid #e2e8f0;
+      
+      &:hover {
+        background-color: #f8fafc;
+      }
+  
+      td {
+        font-size: 0.95rem;
+        color: #1a202c;
+      }
+    }
+    
+    .player-name, .team-name {
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .team-info, .player-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .team-crest {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    
+    .position {
+      width: 40px;
+    }
+    
+    .position-indicator {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-weight: 600;
+      
+      &.pos-top {
+        background-color: #fef3c7;
+        color: #92400e;
+      }
+      
+      &.pos-regular {
+        background-color: #f1f5f9;
+        color: #1a202c;
+      }
+    }
+    
+    .goals {
+      font-weight: 700;
+      color: #15803d;
+    }
+  
+    thead tr th {
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .scorers-table {
+      th, td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.875rem;
+      }
+      
+      .team-crest {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }

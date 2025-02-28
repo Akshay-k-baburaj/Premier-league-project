@@ -1,0 +1,203 @@
+.standings-page {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ade8f4;
+  display: flex;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100vw;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.standings-card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  
+  &:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.standings-header {
+  background: linear-gradient(to right, #0077b6, #00b4d8) !important;
+  border-radius: 12px 12px 0 0;
+  padding: 1.5rem !important;
+  
+  h3 {
+    color: white !important;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.standings-content {
+  padding: 1.5rem !important;
+}
+
+.standings-table-container {
+  overflow-x: auto;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: 1rem;
+    text-align: center;
+    color: #1a202c; // Darker text color for better visibility
+    font-weight: 500; // Slightly bolder font for all cells
+    
+    &.team-header {
+      text-align: left;
+    }
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: 700; // Bolder headers
+    color: #1a202c;
+    border-bottom: 2px solid #e2e8f0; // Added border for better separation
+  }
+  
+  .team-row {
+    border-bottom: 1px solid #e2e8f0;
+    
+    &:hover {
+      background-color: #f8fafc;
+    }
+
+    // Make all row cells more visible
+    td {
+      font-size: 0.95rem; // Slightly larger text
+      color: #1a202c; // Consistently dark text
+    }
+  }
+  
+  .team-name {
+    text-align: left;
+    font-weight: 600; // Make team names stand out
+  }
+  
+  .team-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .team-crest {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .position {
+    width: 40px;
+  }
+  
+  .position-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-weight: 600;
+    
+    &.pos-champions {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+    
+    &.pos-europa {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+    
+    &.pos-relegation {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+    
+    &.pos-regular {
+      background-color: #f1f5f9;
+      color: #1a202c; // Darker color for better visibility
+    }
+  }
+  
+  // Stats columns (MP, W, D, L, GF, GA)
+  td:nth-child(3),
+  td:nth-child(4),
+  td:nth-child(5),
+  td:nth-child(6),
+  td:nth-child(7),
+  td:nth-child(8) {
+    font-weight: 500;
+    color: #1a202c;
+  }
+  
+  .points {
+    font-weight: 700; // Extra bold for points
+    color: #1a202c;
+    font-size: 1rem;
+  }
+  
+  .positive {
+    color: #15803d; // Darker green for better visibility
+    font-weight: 600;
+  }
+  
+  .negative {
+    color: #b91c1c; // Darker red for better visibility
+    font-weight: 600;
+  }
+
+  // Column headers
+  thead tr th {
+    font-weight: 700;
+    color: #0f172a; // Very dark color for headers
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+// Added header tooltips for clarity
+.standings-table th {
+  position: relative;
+  
+  &:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: #1a202c;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 768px) {
+  .standings-table {
+    th, td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    .team-crest {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

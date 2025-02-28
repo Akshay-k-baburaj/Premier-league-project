@@ -1,0 +1,159 @@
+.scroll-sections-container {
+    background-color: #ade8f4;
+    padding: 50px 0;
+  }
+
+  .team-crest-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+  
+    .team-crest {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0077b6;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+  
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+    }
+  }
+  
+  .scroll-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+    margin-bottom: 50px;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .content-wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  
+    &.left {
+      .content-wrapper {
+        flex-direction: row-reverse;
+      }
+    }
+  
+    &.right {
+      .content-wrapper {
+        flex-direction: row;
+      }
+    }
+  
+    .text-content {
+      flex: 1;
+      padding: 40px;
+      background: white;
+  
+      h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+  
+      p {
+        color: #333;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+  
+      .social-media-links {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        
+        .social-icon {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+          color: #0077b6;
+          transition: transform 0.3s ease;
+  
+          svg {
+            font-size: 2rem;
+            margin-bottom: 10px;
+          }
+  
+          span {
+            font-size: 0.8rem;
+            color: #333;
+          }
+  
+          &:hover {
+            transform: scale(1.1);
+            color: #00b4d8;
+          }
+        }
+      }
+    }
+  
+    .image-content {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      min-height: 400px;
+  
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right, 
+          rgba(0,0,0,0.7) 0%, 
+          rgba(0,0,0,0.3) 100%
+        );
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .scroll-section {
+      .content-wrapper {
+        flex-direction: column !important;
+      }
+  
+      .text-content, .image-content {
+        width: 100%;
+      }
+  
+      .image-content {
+        min-height: 300px;
+      }
+  
+      .social-media-links {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+    }
+  }

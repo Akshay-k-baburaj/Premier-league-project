@@ -1,0 +1,228 @@
+.home-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    .user-welcome {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        span {
+          color: white;
+          font-weight: 500;
+        }
+      }
+
+    .nav-auth {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        z-index: 3;
+        display: flex;
+        gap: 20px;
+
+        .auth-button {
+            color: #ffd700;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #ffd700;
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+            background: rgba(0, 0, 0, 0.3);
+
+            &:hover {
+                background: #ffd700;
+                color: #333;
+            }
+        }
+    }
+
+    .slideshow-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(0, 0, 0, 0.8) 40%,
+                rgba(0, 0, 0, 0.6) 60%,
+                rgba(0, 0, 0, 0.4) 80%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+            z-index: 2;
+        }
+    }
+
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        max-height: 90%;
+        z-index: 3;
+        display: absolute;
+        
+
+        h1 {
+            color: #fff;
+            font-size: 53px;
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+
+            &::before {
+                color: #ffd700;
+                font-size: 18px;
+                position: absolute;
+                margin-top: -40px;
+                left: 15px;
+                opacity: 0.6;
+            }
+
+            &::after {
+                color: #ffd700;
+                font-size: 18px;
+                position: absolute;
+                margin-top: 18px;
+                left: 20px;
+                animation: fadeIn 1s 1.7s backwards;
+                opacity: 0.6;
+            }
+
+            img {
+                width: 200px;
+                opacity: 0;
+                height: auto;
+                animation: rotateIn 1s linear both;
+                animation-delay: 1.4s;
+                
+            }
+        }
+
+        h2 {
+            color: #ade8f4;
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 11px;
+            font-family: sans-serif;
+            letter-spacing: 3px;
+            animation: fadeIn 1s 1.8s backwards;
+        }
+
+        .flat-button {
+            color: #ffd700;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 2px solid #ffd700;
+            margin-top: 25px;
+            float: left;
+            animation: fadeIn 1s 1.8s backwards;
+            white-space: nowrap;
+
+            &:hover {
+                background: #ffd700;
+                color: #333;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    .home-page {
+        .nav-auth {
+            top: 10px;
+            right: 10px;
+            
+            .auth-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+        h1 {
+            font-size: 39px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .home-page {
+        .nav-auth {
+            top: 10px;
+            right: 10px;
+            
+            .auth-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+        h1 {
+            font-size: 40px;
+            justify-content: center;
+        }
+
+        .text-zone {
+            position: relative;
+            width: 100%;
+            transform: none;
+            padding: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: left;
+            padding-top: 100px;
+        }
+
+        .flat-button {
+            float: none;
+            display: block;
+            width: 125px;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(0, 0, 0, 0.8) 50%,
+                rgba(0, 0, 0, 0.6) 100%
+            ) !important;
+        }
+    }
+}
+

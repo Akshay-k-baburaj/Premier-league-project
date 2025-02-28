@@ -1,0 +1,128 @@
+.news-page {
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ade8f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  .news-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    
+    &:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+  
+  .news-header {
+    background: linear-gradient(to right, #0077b6, #00b4d8) !important;
+    border-radius: 12px 12px 0 0;
+    padding: 1.5rem !important;
+    
+    h3 {
+      color: white !important;
+      text-align: center;
+      margin: 0;
+    }
+  }
+  
+  .news-content {
+    padding: 1.5rem !important;
+  }
+  
+  .news-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid #eaeaea;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    .news-item-content {
+      .news-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1a202c;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+      }
+  
+      .news-description {
+        color: #4a5568;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+  
+      .news-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        
+        .news-date {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #4b5563;
+          font-size: 0.875rem;
+        }
+  
+        .news-source {
+          color: #4b5563;
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+  
+        .news-link {
+          display: flex;
+          align-items: center;
+          color: #0077b6;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.2s ease;
+  
+          &:hover {
+            color: #00b4d8;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 640px) {
+    .news-page {
+      padding: 1rem;
+    }
+  
+    .news-item {
+      padding: 1rem;
+  
+      .news-item-content {
+        .news-title {
+          font-size: 1.125rem;
+        }
+  
+        .news-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+      }
+    }
+  }

@@ -1,0 +1,299 @@
+.match-comments-section {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 2rem;
+  margin-top: 2rem;
+
+  .comments-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: #0077b6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .view-all-comments {
+      width: 100%;
+      padding: 0.75rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      color: #0077b6;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background: #e6f3ff;
+        border-color: #0077b6;
+      }
+  }
+
+  .comment-form {
+    margin-bottom: 2rem;
+
+    .input-container {
+      display: flex;
+      gap: 1rem;
+
+      input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: white;
+        color: #1e293b;
+
+        &:focus {
+          outline: none;
+          border-color: #0077b6;
+          box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.2);
+        }
+
+        &::placeholder {
+          color: #94a3b8;
+        }
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        background: #0077b6;
+        color: white;
+        border: none;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &:hover:not(:disabled) {
+          background: #005d91;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          background: #94a3b8;
+        }
+      }
+    }
+  }
+
+  .auth-prompt {
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 1px solid #e2e8f0;
+
+    p {
+      margin-bottom: 1rem;
+      color: #64748b;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      a {
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &.login-btn {
+          background: #0077b6;
+          color: white;
+
+          &:hover {
+            background: #005d91;
+          }
+        }
+
+        &.register-btn {
+          background: #e6f3ff;
+          color: #0077b6;
+          border: 1px solid #0077b6;
+
+          &:hover {
+            background: #cce7ff;
+          }
+        }
+      }
+    }
+  }
+
+  .error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .comment-item {
+      background: #f8fafc;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid #e2e8f0;
+
+      .comment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+
+        .username {
+          color: #0077b6;
+          font-weight: 600;
+        }
+
+        .timestamp {
+          color: #64748b;
+          font-size: 0.875rem;
+        }
+      }
+
+      .comment-content {
+        color: #1e293b;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .comments-overlay {
+    position: absolute; // Change from fixed to absolute
+    top: 100%; // Position it below the button
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    
+    &.active {
+      display: block;
+    }
+  
+    .comments-popup {
+      background: white;
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      max-height: 60vh; // Adjust height as needed
+      transform: scale(0.95);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-top: 1rem; // Add some margin to separate from the button
+      
+      &.active {
+        transform: scale(1);
+        opacity: 1;
+      }
+  
+      .comments-popup-header {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 1.5rem 1.5rem 0 0;
+        
+        h3 {
+          color: white;
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 0;
+        }
+      
+        .close-btn {
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          transition: background-color 0.2s ease;
+          
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+  
+      .comments-popup-content {
+        padding: 2rem;
+        overflow-y: auto;
+        max-height: calc(60vh - 5rem); // Adjust height as needed
+        scrollbar-width: thin;
+        scrollbar-color: #0077b6 #f1f5f9;
+  
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+  
+        &::-webkit-scrollbar-track {
+          background: #f1f5f9;
+          border-radius: 4px;
+        }
+  
+        &::-webkit-scrollbar-thumb {
+          background: #0077b6;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .view-all-comments-container {
+    position: relative;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .comment-form {
+      .input-container {
+        flex-direction: column;
+      }
+    }
+
+    .auth-prompt {
+      .auth-buttons {
+        flex-direction: column;
+      }
+    }
+
+    .comments-popup {
+      margin: 1rem;
+      max-height: calc(100vh - 2rem) !important;
+    }
+  }
+}

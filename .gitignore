@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Java/Maven
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+application.properties
+application-*.properties
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Build output
+frontend/build/
+frontend/dist/
+
+# Database
+*.db

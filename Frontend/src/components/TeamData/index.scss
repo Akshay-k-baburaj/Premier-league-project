@@ -1,0 +1,111 @@
+.team-data-page {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ade8f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  .page-title {
+      color: #0077b6;
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin: 2rem 0;
+      text-align: center;
+  }
+
+  .table-container {
+      width: 100%;
+      max-width: 1400px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      overflow-x: auto;
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+
+          thead {
+              background: linear-gradient(to right, #0077b6, #00b4d8);
+              
+              th {
+                  padding: 15px;
+                  text-align: left;
+                  color: white;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  font-size: 0.9rem;
+              }
+          }
+
+          tbody {
+              tr {
+                  transition: background-color 0.3s ease;
+
+                  &:nth-child(even) {
+                      background-color: #f4f4f4;
+                  }
+
+                  &:hover {
+                      background-color: #e0e0e0;
+                  }
+
+                  td {
+                      padding: 12px 15px;
+                      border-bottom: 1px solid #e0e0e0;
+                      font-size: 0.9rem;
+                      color: #333;
+                  }
+              }
+          }
+      }
+  }
+
+  .show-more-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      &:hover {
+          background-color: #00b4d8;
+          transform: translateY(-3px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .team-data-page .table-container {
+      margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .team-data-page {
+      padding: 1rem;
+
+      .page-title {
+          font-size: 2.5rem;
+      }
+
+      .table-container table {
+          font-size: 0.8rem;
+
+          th, td {
+              padding: 8px;
+          }
+      }
+  }
+}

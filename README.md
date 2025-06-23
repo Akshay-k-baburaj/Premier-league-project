@@ -1,4 +1,4 @@
-# Premier Zone Fantasy!
+ # Premier Zone Fantasy! ![alt text](git_premier/Picture1.png "Logo Title Text 1")
 
 Your home for everything Premier League related
 
@@ -60,3 +60,16 @@ fans worldwide.
    • Postman – Used for testing APIs and ensuring proper backend responses.<br>
    • Git & GitHub – Version control system used for tracking changes and collaborating on the project.<br>
    • Browser developer Tools (Chrome) – built-in utilities in web browsers that help developers inspect, debug, and optimize web applications in real time.<br>
+
+## Images 
+
+![alt text]( git_premier/Picture2.png "Logo Title Text 1")
+![alt text]( git_premier/Picture3.png "Logo Title Text 2")
+![alt text]( git_premier/Picture4.png "Logo Title Text 3")
+![alt text]( git_premier/Picture5.png "Logo Title Text 4")
+![alt text]( git_premier/Picture6.png "Logo Title Text 5")
+![alt text]( git_premier/Picture7.png "Logo Title Text 6")
+![alt text]( git_premier/Picture8.png "Logo Title Text 7")
+![alt text]( git_premier/Picture9.png "Logo Title Text 8")
+![alt text]( git_premier/Picture10.png "Logo Title Text 9")
+![alt text]( git_premier/Picture11.png "Logo Title Text 10")
